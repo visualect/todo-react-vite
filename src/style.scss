@@ -65,7 +65,7 @@ $background-color: #FCFCFC;
 $primary-color: #171717;
 $secondary-color: #F8F8F8;
 $border: 1px solid hsl(0, 0%, 90.9%);
-$border-radius: 5px;
+$border-radius: 10px;
 $ff: 'Inter', Arial, Helvetica, sans-serif;
 $btn-color: #2e2e2e;
 $red-color: #DE035E;
@@ -103,6 +103,7 @@ body {
     border: $border;
     border-radius: $border-radius;
     font-size: 24px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 6%), 0 1px 0 0 rgb(0 0 0 / 8%), 0 2px 2px 0 rgb(0 0 0 / 4%), 0 3px 3px 0 rgb(0 0 0 / 2%), 0 4px 4px 0 rgb(0 0 0 / 1%);
 }
 
 .form__input::placeholder {
@@ -122,10 +123,15 @@ body {
     font-weight: 600;
     border: none;
     cursor: pointer;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 6%), 0 1px 0 0 rgb(0 0 0 / 8%), 0 2px 2px 0 rgb(0 0 0 / 4%), 0 3px 3px 0 rgb(0 0 0 / 2%), 0 4px 4px 0 rgb(0 0 0 / 1%);
 }
 
 .btn-form {
     margin-left: 5px;
+    min-width: 70px;
+    background: linear-gradient(156deg, #fff, #f0f0f0);
+    color: $primary-color;
+    font-weight: 500;
 }
 
 .list {
@@ -144,7 +150,8 @@ body {
     padding: 10px 20px;
     border: $border;
     border-radius: $border-radius;
-    background-color: $secondary-color;
+
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 6%), 0 1px 0 0 rgb(0 0 0 / 8%), 0 2px 2px 0 rgb(0 0 0 / 4%), 0 3px 3px 0 rgb(0 0 0 / 2%), 0 4px 4px 0 rgb(0 0 0 / 1%);
 }
 
 .item:not(:last-child) {
@@ -154,20 +161,39 @@ body {
 .item__text {
     margin: 0;
     padding: 0;
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
 }
 
 .btn-delete,
 .btn-done {
     padding: 3px 8px;
     color: $primary-color;
+    min-width: 75px;
 }
 
 .btn-delete {
-    margin-left: 6px;
-    background-color: $red-color;
+    margin-top: 6px;
+    background: linear-gradient(156deg, $red-color, #fd7c7c);
 }
 
 .btn-done {
+    background: linear-gradient(156deg, $green-color, #3effa5);
+}
+
+.item-done {
     background-color: $green-color;
+    transition: background-color .2s ease-in;
+}
+
+.item-default {
+    background-color: $secondary-color;
+    transition: background-color .2s ease-out;
 }
